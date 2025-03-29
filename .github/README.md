@@ -1,4 +1,4 @@
-# Victor Omollo Portfolio
+# Omollo's Portfolio
 
 A modern, responsive portfolio website showcasing My skills, projects, and professional experience.
 
