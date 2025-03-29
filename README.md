@@ -1,63 +1,46 @@
-<<<<<<< HEAD
-# Modern Portfolio Website
+# Victor Omollo Portfolio
 
-A responsive portfolio website with a clean dark theme design inspired by the provided mockup.
+A modern, responsive portfolio website showcasing Victor Omollo's skills, projects, and professional experience.
 
 ## Features
 
-- Modern dark theme UI design
-- Responsive layout that works on all devices
-- Interactive animations and transitions
-- Project showcase sections
-- Work experience timeline
-- Contact section
+- 🎨 Modern, clean design with smooth animations
+- 📱 Fully responsive layout for all devices
+- 🚀 Performance-optimized with minimal dependencies
+- ✨ Interactive elements and micro-animations
+- 🔍 Search engine friendly structure
 
 ## Technologies Used
 
 - HTML5
-- CSS3 (Custom Properties, Flexbox, Grid)
-- JavaScript (ES6+)
-- Font Awesome for icons
-
-## Getting Started
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-```
-
-2. Navigate to the project folder:
-```bash
-cd portfolio-website
-```
-
-3. Open the `index.html` file in your browser:
-- Double-click the file or
-- Use a local development server like Live Server for VSCode
+- CSS3 (Custom CSS, no frameworks)
+- JavaScript (Vanilla JS, no libraries)
+- SVG animations
 
 ## Project Structure
 
-```
-portfolio-website/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles
-├── script.js           # JavaScript functionality
-└── README.md           # Documentation
-```
+- `index.html` - Main HTML document
+- `styles.css` - All styling rules
+- `script.js` - Interactive functionality
+- `assets/` - Contains images and documents
 
-## Customization
+## Getting Started
 
-- Edit the `index.html` file to update content (text, links, project details)
-- Modify colors and styling in `styles.css` by changing CSS variables in the `:root` selector
-- Add or modify animations in `script.js`
+### Local Development
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/SK3CHI3/porfolio.git
+   ```
+
+2. Open `index.html` in your browser
 
 ## License
 
-MIT
+This project is available as open source under the terms of the MIT License.
 
-## Author
+## Contact
 
-Yashita Namdeo 
-=======
-# porfolio
->>>>>>> d6ed30f43e740d9120f5ddb56ccf2cd91707eae4
+Victor Omollo - [omollovictorotieno58@gmail.com](mailto:omollovictorotieno58@gmail.com)
+
+Project Link: [https://github.com/SK3CHI3/porfolio](https://github.com/SK3CHI3/porfolio)

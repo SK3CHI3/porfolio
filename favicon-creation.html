@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+</head>
+<body>
+    <h1>Favicon Generator</h1>
+    <p>Click the button below to generate and download the favicon.</p>
+    
+    <div>
+        <svg id="favicon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 32 32">
+            <rect width="32" height="32" rx="4" fill="#0a192f"/>
+            <text x="16" y="22" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#00ce7c" text-anchor="middle">VO</text>
+            <rect x="4" y="4" width="24" height="24" rx="3" stroke="#00ce7c" stroke-width="1.5" fill="none"/>
+        </svg>
+    </div>
+    
+    <button id="downloadBtn">Generate Favicon</button>
+    
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const svg = document.getElementById('favicon');
+            const serializer = new XMLSerializer();
+            const svgString = serializer.serializeToString(svg);
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = 64;
+            canvas.height = 64;
+            const ctx = canvas.getContext('2d');
+            
+            const img = new Image();
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, 64, 64);
+                
+                // Convert to PNG
+                const pngUrl = canvas.toDataURL('image/png');
+                
+                // Create download link
+                const downloadLink = document.createElement('a');
+                downloadLink.href = pngUrl;
+                downloadLink.download = 'favicon.png';
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+            };
+            
+            img.src = 'data:image/svg+xml;base64,' + btoa(svgString);
+        });
+    </script>
+</body>
+</html> 

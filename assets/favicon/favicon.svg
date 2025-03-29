@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#0a192f"/>
+  
+  <!-- Border -->
+  <rect x="2" y="2" width="28" height="28" rx="4" stroke="#00ce7c" stroke-width="1.5" fill="none"/>
+  
+  <!-- Letters V -->
+  <path d="M10 8 L14 22 L18 8" stroke="#00ce7c" stroke-width="2.5" fill="none"/>
+  
+  <!-- Letter O -->
+  <ellipse cx="22" cy="15" rx="4" ry="6" stroke="#00ce7c" stroke-width="2.5" fill="none"/>
+</svg> 
