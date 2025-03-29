@@ -34,8 +34,6 @@ A modern, responsive portfolio website showcasing My skills, projects, and profe
    ```
 
 2. Open `index.html` in your browser
-         OR
-   click on the link in the description
     
 
 ## Contact
