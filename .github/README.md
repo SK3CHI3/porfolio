@@ -34,10 +34,9 @@ A modern, responsive portfolio website showcasing My skills, projects, and profe
    ```
 
 2. Open `index.html` in your browser
-
-## License
-
-This project is available as open source under the terms of the MIT License.
+         OR
+   click on the link in the description
+    
 
 ## Contact
 
