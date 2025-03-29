@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Modern Portfolio Website
 
 A responsive portfolio website with a clean dark theme design inspired by the provided mockup.
@@ -57,3 +58,6 @@ MIT
 ## Author
 
 Yashita Namdeo 
+=======
+# porfolio
+>>>>>>> d6ed30f43e740d9120f5ddb56ccf2cd91707eae4
