@@ -471,38 +471,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
         
-        // Highlight function for important text
-        const highlightImportantText = () => {
+        // Typing animation and highlight effects
+        const setupHighlightText = () => {
             // Find all elements with the highlight-text class
             const highlightElements = document.querySelectorAll('.highlight-text');
             
-            // Add subtle styling to each element
-            highlightElements.forEach(element => {
-                element.style.display = 'inline-block';
-                element.style.position = 'relative';
-            });
-            
-            // Add animation to important links
-            const highlightLinks = document.querySelectorAll('.highlight-link');
-            highlightLinks.forEach(link => {
-                link.addEventListener('mouseover', () => {
-                    link.style.color = 'var(--highlight)';
-                    link.style.transition = 'color 0.3s ease';
-                    
-                    // Create typewriter effect on hover
-                    const originalText = link.textContent;
-                    link.textContent = '';
-                    let i = 0;
-                    const typeText = setInterval(() => {
-                        if (i < originalText.length) {
-                            link.textContent += originalText.charAt(i);
-                            i++;
-                        } else {
-                            clearInterval(typeText);
-                        }
-                    }, 50);
+            // Remove animation styles and just keep the highlight
+            if (highlightElements) {
+                highlightElements.forEach(element => {
+                    // Remove animation delays and animation attributes
+                    element.removeAttribute('style');
                 });
-            });
+            }
         };
         
         const setupScrollspy = () => {
@@ -516,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setupNavigation();
         setupTypingAnimation();
         setupWorkTabs();
-        highlightImportantText();
+        setupHighlightText();
         setupParallaxEffect();
         setupScrollProgress();
         setupAnimationOnScroll();

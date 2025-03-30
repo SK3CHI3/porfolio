@@ -1626,13 +1626,14 @@ footer {
     animation: pulse 0.5s ease;
 }
 
-/* Enhanced highlight text styling */
+/* Enhanced highlight text styling - static version */
 .highlight-text {
     color: var(--highlight);
     position: relative;
     display: inline-block;
     font-weight: 500;
     padding: 0 2px;
+    transition: none;
 }
 
 .highlight-text::after {
@@ -1644,6 +1645,7 @@ footer {
     height: 5px;
     background-color: rgba(0, 206, 124, 0.2);
     z-index: -1;
+    transition: none;
 }
 
 .logo a {
@@ -1906,4 +1908,14 @@ h1.typing, .tagline.typing {
 
 .profile-fallback-container:hover .profile-name {
     transform: translateY(5px);
+}
+
+/* Static highlight styling that doesn't flicker */
+.static-highlight {
+    color: var(--highlight);
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--highlight);
 } 
