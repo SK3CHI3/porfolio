@@ -846,20 +846,63 @@ h1 {
     margin-bottom: 50px;
 }
 
+.contact-text a {
+    color: var(--highlight);
+    text-decoration: none;
+    transition: none;
+    position: relative;
+    font-weight: 500;
+}
+
+.contact-text a:hover {
+    color: var(--highlight);
+}
+
 .contact-button {
     display: inline-block;
+    margin-top: 30px;
     padding: 15px 30px;
     border: 1px solid var(--highlight);
     border-radius: 4px;
-    color: var(--highlight);
     font-family: var(--font-mono);
     font-size: 1rem;
-    text-decoration: none;
+    color: var(--highlight);
+    background-color: transparent;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-button:hover {
     background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 255, 218, 0.1);
+    left: -100%;
+    top: 0;
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.contact-button:hover::before {
+    left: 0;
+}
+
+.contact-button .highlight-text {
+    position: relative;
+    padding: 0;
+}
+
+.contact-button .highlight-text::after {
+    height: 0;
+    display: none;
 }
 
 /* Footer Styles */
@@ -1566,6 +1609,14 @@ footer {
     transform: translateY(30px);
 }
 
+/* Make sure profile fallback is never affected by animate-on-scroll */
+.profile-fallback-container,
+.profile-fallback-container * {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+
 .animate-on-scroll.visible {
     animation: slideInUp 0.6s ease forwards;
 }
@@ -1767,4 +1818,92 @@ h1.typing, .tagline.typing {
     overflow: hidden;
     animation: blink 0.8s step-end infinite;
     display: inline-block;
+}
+
+/* Style for profile fallback */
+.profile-fallback-container {
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-bg);
+    background-image: linear-gradient(145deg, rgba(0, 206, 124, 0.05) 0%, transparent 100%);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.profile-fallback-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 206, 124, 0.08) 0%, transparent 50%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.profile-fallback-container:hover::before {
+    opacity: 1;
+}
+
+.profile-initials {
+    font-size: 80px;
+    font-weight: bold;
+    color: var(--highlight);
+    line-height: 1;
+    margin-bottom: 15px;
+    font-family: var(--font-sans);
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.profile-initials::before,
+.profile-initials::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--highlight);
+    opacity: 0.6;
+}
+
+.profile-initials::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.profile-initials::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.profile-name {
+    font-size: 18px;
+    color: var(--light-text);
+    font-family: var(--font-sans);
+    transition: transform 0.3s ease;
+}
+
+.profile-fallback-container:hover .profile-initials {
+    transform: translateY(-5px);
+}
+
+.profile-fallback-container:hover .profile-name {
+    transform: translateY(5px);
 } 

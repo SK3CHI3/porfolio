@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Elements to animate
         const elements = [
             '.section-title',
-            '.about-image',
             '.about-text p',
             '.tech-stack',
             '.skills-list',
@@ -197,6 +196,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (profileImage) {
         profileImage.style.animation = 'float 8s ease-in-out infinite';
     }
+    
+    // First thing: ensure profile fallback is always visible
+    const profileFallback = document.querySelector('.profile-fallback-container');
+    if (profileFallback) {
+        // Force the fallback to be visible with important styling
+        profileFallback.setAttribute('style', 'opacity: 1 !important; visibility: visible !important;');
+        // Apply the floating animation but keep visibility
+        profileFallback.style.animation = 'float 8s ease-in-out infinite';
+    }
+    
+    // Make sure this happens early in the loading process
+    window.addEventListener('load', () => {
+        if (profileFallback) {
+            profileFallback.setAttribute('style', 'opacity: 1 !important; visibility: visible !important;');
+        }
+    });
     
     // Add scroll to top button
     const createScrollTopButton = () => {
@@ -355,7 +370,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Elements to animate
             const elements = [
                 '.section-title',
-                '.about-image',
                 '.about-text p',
                 '.education-card',
                 '.skills-group',
