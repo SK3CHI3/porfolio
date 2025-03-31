@@ -253,7 +253,9 @@ h1 {
 }
 
 .cta-button {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     padding: 12px 20px;
     border: 1px solid var(--highlight);
     border-radius: 4px;
@@ -263,6 +265,8 @@ h1 {
     text-decoration: none;
     transition: var(--transition);
     margin-top: 30px;
+    margin-right: 10px;
+    flex: 1;
 }
 
 .cta-button:hover {
@@ -1016,13 +1020,15 @@ footer {
     display: block;
     color: var(--secondary-text);
     font-family: var(--font-mono);
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     letter-spacing: 0.1em;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transition: var(--transition);
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(10px) scale(0.9);
+    margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 .email-link:hover {
@@ -1918,4 +1924,14 @@ h1.typing, .tagline.typing {
     display: inline-block;
     padding-bottom: 2px;
     border-bottom: 1px solid var(--highlight);
+}
+
+.whatsapp-button {
+    background-color: #25D366; /* WhatsApp green */
+    color: white; /* Text color */
+    border: none; /* No border */
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* Darker green on hover */
 } 
