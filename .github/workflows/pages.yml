@@ -25,12 +25,44 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: List files
+        run: |
+          echo "Files in repository:"
+          ls -la
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v2
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: '.'
+          # Include hidden files
+          include: '**/*'
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+        with:
+          # Override the default branch to ensure deployment
+          branch: gh-pages
+          # Force push to ensure proper deployment
+          force: true
+
+      - name: Set file permissions
+        run: |
+          echo "Setting file permissions..."
+          chmod -R 755 .
+
+      - name: Show deployment URL
+        run: echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
+
+      - name: Detailed logging
+        run: |
+          echo "Detailed logging..."
+          ls -lR .
+          echo "Deployment logs:"
+          cat /github/workspace/deployment.log
