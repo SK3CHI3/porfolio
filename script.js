@@ -99,9 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     
-    // Initialize animations
-    animateElements();
-    
     // Add animation to social icons and email
     const socialIcons = document.querySelectorAll('.social-icons a');
     const emailLink = document.querySelector('.email-link');
@@ -117,19 +114,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     
-    // Initialize with slight delay for better visual effect
-    setTimeout(() => {
-        addHoverAnimation(socialIcons);
-        if (emailLink) emailLink.style.opacity = '1';
-    }, 1000);
-    
     // Add typing animation function
     const animateTyping = (element, text, speed = 100, delay = 0) => {
         if (!element) return;
         
         element.textContent = '';
         element.style.opacity = '1';
-        element.classList.add('typing');
+        
+        // Only add typing class for tagline
+        if (element.classList.contains('tagline')) {
+            element.classList.add('typing');
+        }
         
         setTimeout(() => {
             let i = 0;
@@ -139,15 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     i++;
                 } else {
                     clearInterval(timer);
-                    // Remove typing class to stop the blinking cursor
-                    setTimeout(() => {
-                        element.classList.remove('typing');
-                    }, 1000);
                 }
             }, speed);
         }, delay);
     };
-    
+
     // Add typing animation function and setup
     const setupTypingAnimation = () => {
         // Get the elements
@@ -160,7 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Initial typing animation on page load
             animateTyping(nameElement, originalName, 100, 400);
-            animateTyping(taglineElement, originalTagline, 80, 2000);
+            
+            // Wait for name to finish typing before starting tagline
+            setTimeout(() => {
+                animateTyping(taglineElement, originalTagline, 100, 0);
+            }, originalName.length * 100 + 400 + 1000);
         }
         
         // Add typing animation for section titles on scroll
@@ -188,8 +183,95 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     
-    // Call the typing setup
-    setupTypingAnimation();
+    // Typing animation for loading screen
+    function setupTypingAnimationLoading() {
+        const typingText = document.getElementById('typingText');
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        const texts = [
+            'Hello mate?',
+            'Welcome To The Matrix (**)',
+        ];
+
+        let currentTextIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        let deletingSpeed = 50;
+
+        function type() {
+            const currentText = texts[currentTextIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentText.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+                
+                if (currentCharIndex <= 0) {
+                    isDeleting = false;
+                    currentTextIndex = (currentTextIndex + 1) % texts.length;
+                    setTimeout(type, 1000); // Pause before typing next text
+                } else {
+                    setTimeout(type, deletingSpeed);
+                }
+            } else {
+                typingText.textContent = currentText.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+                
+                if (currentCharIndex >= currentText.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1000); // Pause before deleting
+                } else {
+                    setTimeout(type, typingSpeed);
+                }
+            }
+        }
+
+        // Create matrix-style falling characters
+        function createMatrixEffect() {
+            const matrixBg = document.querySelector('.matrix-bg');
+            
+            for (let i = 0; i < 100; i++) {
+                const char = document.createElement('div');
+                char.className = 'matrix-character';
+                char.textContent = String.fromCharCode(48 + Math.random() * 10); // Random number 0-9
+                
+                const x = Math.random() * 100 + '%';
+                const delay = Math.random() * 5000;
+                
+                char.style.left = x;
+                char.style.animationDelay = delay + 'ms';
+                
+                matrixBg.appendChild(char);
+            }
+        }
+
+        // Start the animation when the page loads
+        createMatrixEffect();
+        type();
+        
+        // Wait for the animation to complete before showing content
+        setTimeout(() => {
+            loadingScreen.classList.add('fade-out');
+            setTimeout(() => {
+                loadingScreen.remove();
+                // Start main page animations after loading screen is removed
+                setTimeout(() => {
+                    // Initialize main animations
+                    animateElements();
+                    // Initialize social icon animations
+                    addHoverAnimation(socialIcons);
+                    if (emailLink) {
+                        emailLink.style.opacity = '1';
+                        emailLink.style.transform = 'translateY(0)';
+                    }
+                    // Initialize main typing animation
+                    setupTypingAnimation();
+                }, 300); // Small delay to ensure smooth transition
+            }, 500);
+        }, 7000); // Loading screen animation time
+    }
+    
+    setupTypingAnimationLoading();
     
     // Create floating animation for profile image
     const profileImage = document.querySelector('.about-image');
@@ -485,6 +567,86 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
         
+        // Typing animation for loading screen
+        const setupLoadingScreen = () => {
+            const typingText = document.getElementById('typingText');
+            const loadingScreen = document.getElementById('loadingScreen');
+
+            const texts = [
+                'Hello mate?',
+                'Welcome To The Matrix (**)',
+            ];
+
+            let currentTextIndex = 0;
+            let currentCharIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+            let deletingSpeed = 50;
+
+            function type() {
+                const currentText = texts[currentTextIndex];
+                
+                if (isDeleting) {
+                    typingText.textContent = currentText.substring(0, currentCharIndex - 1);
+                    currentCharIndex--;
+                    
+                    if (currentCharIndex <= 0) {
+                        isDeleting = false;
+                        currentTextIndex = (currentTextIndex + 1) % texts.length;
+                        setTimeout(type, 1000); // Pause before typing next text
+                    } else {
+                        setTimeout(type, deletingSpeed);
+                    }
+                } else {
+                    typingText.textContent = currentText.substring(0, currentCharIndex + 1);
+                    currentCharIndex++;
+                    
+                    if (currentCharIndex >= currentText.length) {
+                        isDeleting = true;
+                        setTimeout(type, 1000); // Pause before deleting
+                    } else {
+                        setTimeout(type, typingSpeed);
+                    }
+                }
+            }
+
+            // Create matrix-style falling characters
+            function createMatrixEffect() {
+                const matrixBg = document.querySelector('.matrix-bg');
+                
+                for (let i = 0; i < 100; i++) {
+                    const char = document.createElement('div');
+                    char.className = 'matrix-character';
+                    char.textContent = String.fromCharCode(48 + Math.random() * 10); // Random number 0-9
+                    
+                    const x = Math.random() * 100 + '%';
+                    const delay = Math.random() * 5000;
+                    
+                    char.style.left = x;
+                    char.style.animationDelay = delay + 'ms';
+                    
+                    matrixBg.appendChild(char);
+                }
+            }
+
+            // Start the animation when the page loads
+            createMatrixEffect();
+            type();
+            
+            // Wait for the animation to complete before showing content
+            setTimeout(() => {
+                loadingScreen.classList.add('fade-out');
+                setTimeout(() => {
+                    loadingScreen.remove();
+                    // Add a small delay before starting main animations
+                    setTimeout(() => {
+                        animateElements();
+                    }, 300); // Small delay to ensure smooth transition
+                }, 500);
+            }, 7000); // Loading screen animation time
+        };
+
+        // Setup scrollspy
         const setupScrollspy = () => {
             window.addEventListener('scroll', highlightNavOnScroll);
             window.addEventListener('load', highlightNavOnScroll);
@@ -494,12 +656,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Run all setup functions
         setupScrollspy();
         setupNavigation();
-        setupTypingAnimation();
         setupWorkTabs();
         setupHighlightText();
         setupParallaxEffect();
         setupScrollProgress();
         setupAnimationOnScroll();
+        setupLoadingScreen();
     };
     
     init();
