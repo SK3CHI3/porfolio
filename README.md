@@ -9,7 +9,6 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
 - 🚀 Performance-optimized with minimal dependencies
 - ✨ Interactive elements and micro-animations
 - 🔍 Search engine friendly structure
-- 🎭 Dynamic typing animation with blinking cursor
 
 ## Technologies Used
 
@@ -35,15 +34,6 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
    ```
 
 2. Open `index.html` in your browser
-
-### Features
-
-#### Typing Animation
-The portfolio features a dynamic typing animation that:
-- Types the name "Omollo Victor" first
-- Waits for a second before starting the tagline
-- Displays a blinking cursor only on the tagline
-- Maintains smooth transitions between animations
 
 ## License
 
