@@ -19,25 +19,36 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
 
 ## Project Structure
 
-- `index.html` - Main HTML document
-- `styles.css` - All styling rules
-- `script.js` - Interactive functionality
-- `assets/` - Contains images and documents
+- **assets/**: Contains images, icons, and other media files.
+- **index.html**: The main HTML file for the portfolio.
+- **script.js**: JavaScript file for interactivity and functionality.
+- **styles.css**: Custom CSS file for styling the portfolio.
 
-## Getting Started
+## Installation
 
-### Local Development
+To run this project locally, follow these steps:
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone https://github.com/SK3CHI3/porfolio.git
    ```
+2. Navigate to the project directory:
+   ```bash
+   cd porfolio
+   ```
+3. Open `index.html` in your browser to view the portfolio.
 
-2. Open `index.html` in your browser
+## Usage
+
+This portfolio showcases various projects and skills. Click on the project links to view more details and the live demos.
+
+## Contributing
+
+Contributions are welcome! Please submit a pull request or open an issue to discuss your changes.
 
 ## License
 
-This project is available as open source under the terms of the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
