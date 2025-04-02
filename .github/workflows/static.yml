@@ -1,11 +1,8 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static portfolio to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 permissions:
@@ -40,7 +37,7 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3  # Corrected action
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: build-artifacts
           path: ./dist
