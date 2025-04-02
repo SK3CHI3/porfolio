@@ -24,9 +24,7 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
 - **script.js**: JavaScript file for interactivity and functionality.
 - **styles.css**: Custom CSS file for styling the portfolio.
 
-## Installation
-
-To run this project locally, follow these steps:
+## Installation Instructions
 
 1. Clone the repository:
    ```bash
@@ -36,15 +34,29 @@ To run this project locally, follow these steps:
    ```bash
    cd porfolio
    ```
-3. Open `index.html` in your browser to view the portfolio.
+3. Open `index.html` in your browser.
 
 ## Usage
 
-This portfolio showcases various projects and skills. Click on the project links to view more details and the live demos.
+- Navigate through the portfolio using the menu.
+- Click on projects to view details.
 
 ## Contributing
 
-Contributions are welcome! Please submit a pull request or open an issue to discuss your changes.
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. Open a pull request.
 
 ## License
 
