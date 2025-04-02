@@ -1,4 +1,4 @@
-name: Minimal Deploy
+name: Skip GitHub Pages Deployment
 
 on:
   push:
@@ -6,17 +6,11 @@ on:
       - main
 
 jobs:
-  deploy:
+  skip:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
-        with:
-          # Deploy from main branch
-          branch: main
-          # Force deployment
-          force: true
-          publish_dir: ./public
+      - name: Skip Deployment
+        run: echo "Skipping GitHub Pages deployment as per user request."
