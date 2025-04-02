@@ -40,8 +40,9 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v3  # Corrected action
         with:
+          name: build-artifacts
           path: ./dist
 
       - name: Deploy to GitHub Pages
