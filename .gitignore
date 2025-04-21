@@ -28,4 +28,7 @@ yarn-error.log*
 # Build output
 /dist/
 /build/
-/out/ 
+/out/
+
+# Dependencies
+/node_modules/ 
