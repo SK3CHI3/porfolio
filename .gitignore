@@ -30,5 +30,5 @@ yarn-error.log*
 /build/
 /out/
 
-# Dependencies
+# Dependency directories
 /node_modules/ 
