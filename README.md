@@ -59,7 +59,7 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
 5. Open a pull request.
    
 
-## License
+## License.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
