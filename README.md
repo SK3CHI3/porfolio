@@ -36,7 +36,7 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
    ```
 3. Open `index.html` in your browser.
 
-## Usage
+## Usage.
 
 - Navigate through the portfolio using the menu.
 - Click on projects to view details.
