@@ -15,7 +15,7 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
 - HTML5
 - CSS3 (Custom CSS, no frameworks)
 - JavaScript (Vanilla JS, no libraries)
-- SVG animations
+- SVG animations.
 
 ## Project Structure
 
