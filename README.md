@@ -41,7 +41,7 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
 - Navigate through the portfolio using the menu.
 - Click on projects to view details.
 
-## Contributing
+## Contributing.
 
 1. Fork the repository.
 2. Create a new branch:
