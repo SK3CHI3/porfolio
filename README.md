@@ -24,7 +24,7 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
 - **script.js**: JavaScript file for interactivity and functionality.
 - **styles.css**: Custom CSS file for styling the portfolio.
 
-## Installation Instructions
+## Installation Instructions.
 
 1. Clone the repository:
    ```bash
