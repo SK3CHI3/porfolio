@@ -17,7 +17,7 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
 - JavaScript (Vanilla JS, no libraries)
 - SVG animations.
 
-## Project Structure
+## Project Structure.
 
 - **assets/**: Contains images, icons, and other media files.
 - **index.html**: The main HTML file for the portfolio.
