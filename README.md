@@ -63,7 +63,7 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
+## Contact.
 
 Victor Omollo - [omollovictorotieno58@gmail.com](mailto:omollovictorotieno58@gmail.com)
 
