@@ -1,4 +1,4 @@
-# Victor Omollo Portfolio
+# Victor Omollo Portfolio.
 
 A modern, responsive portfolio website showcasing Victor Omollo's skills, projects, and professional experience.
 
@@ -10,7 +10,7 @@ A modern, responsive portfolio website showcasing Victor Omollo's skills, projec
 - ✨ Interactive elements and micro-animations
 - 🔍 Search engine friendly structure
 
-## Technologies Used
+## Technologies Used.
 
 - HTML5
 - CSS3 (Custom CSS, no frameworks)
