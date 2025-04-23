@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing Victor Omollo's skills, projects, and professional experience.
 
-## Features
+## Features.
 
 - 🎨 Modern, clean design with smooth animations
 - 📱 Fully responsive layout for all devices
